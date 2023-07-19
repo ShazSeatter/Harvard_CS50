@@ -13,8 +13,9 @@ int main(void)
     int cents = get_cents();
 
     // Calculate the number of quarters to give the customer
-    int quarters = calculate_quarters(cents);
-    cents = cents - quarters * 25;
+    int quarters = calculate_quarters(cents); // intergar no decimals rounding down
+    cents = cents - quarters * 25; // 37 - ( 1 * 25) = 37- 25 = 12
+    printf("cents: %d\n", cents); // 12 for reassigned value of cents for next function call 
 
     // Calculate the number of dimes to give the customer
     int dimes = calculate_dimes(cents);
@@ -55,8 +56,10 @@ int get_cents(void)
 int calculate_quarters(int cents)
 {
     // TODO
-    int quarters = cents / 25;
+    int quarters = cents / 25; // 37 / 25 = 1.48 0.48 * .25 = 12 (new cents value for next function) need to * by 0.25 to get currency values. 100 cents in 1 dollar. 
+    printf("quarters: %i", quarters); // 1 
     return quarters;
+    
 }
 
 int calculate_dimes(int cents)
