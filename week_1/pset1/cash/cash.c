@@ -33,34 +33,49 @@ int main(void)
 
     // Print total number of coins to give the customer
     printf("%i\n", coins);
+    printf("Quarters: %d\n", quarters);
+    printf("Dimes: %d\n", dimes);
+    printf("Nickels: %d\n", nickels);
+    printf("Pennies: %d\n", pennies);
+
 }
 
 int get_cents(void)
 {
     // TODO
-    return 0;
+    int cents;
+    do
+    {
+        cents = get_int("Change owed: ");
+    } while (cents < 0);
+    
+    return cents;
 }
 
 int calculate_quarters(int cents)
 {
     // TODO
-    return 0;
+    int quarters = cents / 25;
+    return quarters;
 }
 
 int calculate_dimes(int cents)
 {
     // TODO
-    return 0;
+    int dimes = cents / 10;
+    return dimes;
 }
 
 int calculate_nickels(int cents)
 {
     // TODO
-    return 0;
+    int nickels = cents / 5;
+    return nickels;
 }
 
 int calculate_pennies(int cents)
 {
     // TODO
-    return 0;
+    int pennies = cents; 
+    return pennies;
 }
